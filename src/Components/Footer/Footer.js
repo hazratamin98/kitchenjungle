@@ -33,7 +33,7 @@ const index = () => {
                 Submit Recipe
               </a>
             </li>
-            <a href="CONTACT US" className="hover:underline"></a>
+            <a href="CONTACT" className="hover:underline"></a>
             <li className="mb-4">
               <a href="CONTACT" className="hover:underline">
                 CONTACT US
