@@ -6,7 +6,11 @@ const Navbar = () => {
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 ">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <a href="#" class="flex items-center">
-            {/* <img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-10" alt="Flowbite Logo"> */}
+            {/* <img
+              src="/docs/images/logo.svg"
+              class="mr-3 h-6 sm:h-10"
+              alt="Flowbite Logo"
+            /> */}
             <span className="self-center text-xl ml-12 font-semibold whitespace-nowrap ">
               Kitchen Jungle
             </span>
