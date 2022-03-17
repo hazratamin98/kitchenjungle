@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "../images/download.png";
+import React from "react"
+import Image from "../images/download.png"
 
 const Navbar = () => {
   return (
@@ -75,7 +75,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  //   href="contact"
+                  href="Contact"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white  md:dark:hover:bg-transparent "
                 >
                   CONTACT
@@ -102,7 +102,7 @@ const Navbar = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
