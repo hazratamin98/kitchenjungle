@@ -8,7 +8,7 @@ const index = () => {
           <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
             Kitchen Jungle
           </h2>
-          <p className="text-gray-300 text-sm font-semibold leading-9 hover:underline">
+          <p className="text-gray-300 text-sm font-semibold leading-9 uppercase hover:underline">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore,
             tempora? Repudiandae nam odit et autem?
           </p>
