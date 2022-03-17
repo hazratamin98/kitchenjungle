@@ -81,7 +81,7 @@ const Navbar = () => {
                   CONTACT
                 </a>
               </li>
-              <a className="cursor-pointer hover:text-blue-400 ">
+              <a href="image" className="cursor-pointer hover:text-blue-400 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
