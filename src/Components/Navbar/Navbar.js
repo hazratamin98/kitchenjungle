@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "../images/download.png";
+import React from "react"
+import Image from "../images/download.png"
 
 const Navbar = () => {
   return (
@@ -102,7 +102,7 @@ const Navbar = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
