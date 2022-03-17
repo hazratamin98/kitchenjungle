@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-white shadow-2xl  px-2 sm:px-4 py-4 ">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="#" class="flex items-center">
+        <div className="container flex flex-wrap justify-around items-center mx-auto">
+          <a href="Jungle" class="flex items-center">
             <img src={Image} class="mr-3 h-4 sm:h-16" alt="junglefood" />
             <span className="self-center text-xl  font-semibold whitespace-nowrap ">
               Kitchen Jungle
@@ -42,7 +42,7 @@ const Navbar = () => {
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
               <li>
                 <a
-                  href="#"
+                  href="HOME"
                   className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   aria-current="page"
                 >
@@ -51,7 +51,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="RECIPES"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
                 >
                   RECIPES
@@ -59,7 +59,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="SUBMIT"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white  md:dark:hover:bg-transparent "
                 >
                   SUBMIT RECIPE
@@ -67,7 +67,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="FAVORITES"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white   md:dark:hover:bg-transparent "
                 >
                   FAVORITES
@@ -75,7 +75,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="CONTACT"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white  md:dark:hover:bg-transparent "
                 >
                   CONTACT
