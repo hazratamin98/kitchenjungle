@@ -35,13 +35,11 @@ const index = () => {
             </li>
             <a href="CONTACT US" className="hover:underline"></a>
             <li className="mb-4">
-              <a href="CONTACT" className="hover:underline"></a>
               <a href="CONTACT" className="hover:underline">
                 CONTACT US
               </a>
             </li>
             <li className="mb-4">
-              <a href="nameabout" className="hover:underline"></a>
               <a href="about" className="hover:underline">
                 ABOUT US
               </a>
@@ -54,7 +52,7 @@ const index = () => {
           </h2>
           <ul className="text-gray-300">
             <li className="mb-4">
-              <a href="FAQs" className="hover:underline">
+              <a href="question" className="hover:underline">
                 FAQs
               </a>
             </li>
