@@ -1,17 +1,14 @@
-import React from "react"
+import React from "react";
+import Image from "../images/download.png";
 
 const Navbar = () => {
   return (
     <div>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 ">
+      <nav className="bg-white shadow-2xl  px-2 sm:px-4 py-4 ">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <a href="#" class="flex items-center">
-            {/* <img
-              src="/docs/images/logo.svg"
-              class="mr-3 h-6 sm:h-10"
-              alt="Flowbite Logo"
-            /> */}
-            <span className="self-center text-xl ml-12 font-semibold whitespace-nowrap ">
+            <img src={Image} class="mr-3 h-4 sm:h-16" alt="junglefood" />
+            <span className="self-center text-xl  font-semibold whitespace-nowrap ">
               Kitchen Jungle
             </span>
           </a>
@@ -105,7 +102,7 @@ const Navbar = () => {
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

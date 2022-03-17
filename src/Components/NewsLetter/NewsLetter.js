@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
 const NewsLetter = () => {
   return (
-    <div className="bg-[#F7F6F2] flex md:flex-row sm:flex-col md:text-center sm:text-center   py-12 justify-center justify-around ">
+    <div className="bg-[#F7F6F2] flex md:flex-row sm:flex-col md:text-center sm:text-center   py-14 justify-center justify-around ">
       <div>
         <h1 className="font-semibold text-xl">Subcribe to our Newsletter</h1>
         <p>Get e-mail updates about our latest shops and special offers</p>
@@ -19,7 +19,7 @@ const NewsLetter = () => {
         <button className="bg-red-300 text-center py-2 px-2">Subscribe</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsLetter
+export default NewsLetter;
