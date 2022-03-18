@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "../images/download.png"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -82,6 +83,7 @@ const Navbar = () => {
                 </a>
               </li>
               <a href="image" className="cursor-pointer hover:text-blue-400 ">
+                {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
