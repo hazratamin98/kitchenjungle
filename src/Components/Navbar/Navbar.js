@@ -42,21 +42,21 @@ const Navbar = () => {
           >
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
               <li>
-                <a
-                  href="HOME"
+                <Link
+                  to="/HOME"
                   className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   aria-current="page"
                 >
                   HOME
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="RECIPES"
+                <Link
+                  to="/Recipe"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
                 >
                   RECIPES
-                </a>
+                </Link>
               </li>
               <li>
                 {" "}
@@ -83,23 +83,26 @@ const Navbar = () => {
                   CONTACT
                 </a>
               </li>
-              <a href="image" className="cursor-pointer hover:text-blue-400 ">
+              <Link to="/Login">
                 {" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  ></path>
-                </svg>
-              </a>
+                <a href="image" className="cursor-pointer hover:text-blue-400 ">
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path>
+                  </svg>
+                </a>
+              </Link>
             </ul>
           </div>
         </div>

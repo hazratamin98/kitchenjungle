@@ -1,7 +1,17 @@
-import React from "react"
-import Image from "../../Components/images/download.png"
+import React, { useState } from "react"
 
 const SignUp = () => {
+  const [firstname, setFirstname] = useState("")
+  const [lastname, setLastname] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handlesubmit = (e) => {
+    e.preventDefault()
+    console.log(firstname, lastname, password, phone, email)
+  }
+
   return (
     <div className="  md:grid grid-cols-2">
       <svg
@@ -45,6 +55,9 @@ const SignUp = () => {
                 First name
               </label> */}
                 <input
+                  onChange={(e) => {
+                    setFirstname(e.target.value)
+                  }}
                   id="Frist_name"
                   name="name"
                   type="text"
@@ -60,6 +73,9 @@ const SignUp = () => {
                 </span>
 
                 <input
+                  onChange={(e) => {
+                    setLastname(e.target.value)
+                  }}
                   id="last_name"
                   name="name"
                   type="text"
@@ -74,6 +90,9 @@ const SignUp = () => {
                 <span className="text-1xl font-semi-bold italic">Email</span>
 
                 <input
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                  }}
                   id="email"
                   name="email"
                   type="email"
@@ -91,6 +110,9 @@ const SignUp = () => {
                 </span>
 
                 <input
+                  onChange={(e) => {
+                    setPhone(e.target.value)
+                  }}
                   id="number"
                   name="number"
                   type="number"
@@ -104,6 +126,9 @@ const SignUp = () => {
                 <span className="text-1xl font-semi-bold italic">Password</span>
 
                 <input
+                  onChange={(e) => {
+                    setPassword(e.target.value)
+                  }}
                   id="password"
                   name="password"
                   type="password"
@@ -114,6 +139,7 @@ const SignUp = () => {
 
             <div>
               <button
+                onClick={handlesubmit}
                 type="submit"
                 class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
