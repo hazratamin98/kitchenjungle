@@ -7,8 +7,7 @@ import Login from "./Pages/Login/Login"
 import SignUp from "./Pages/SignUp/SignUp"
 
 import NewsLetter from "./Components/NewsLetter/NewsLetter"
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { Switch } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
   useEffect(() => {
@@ -18,11 +17,8 @@ function App() {
     <div>
       <Navbar />
       <SignUp />
+      <Login />
 
-      {/* <Switch>
-        <Route exact path="/Login" component={Login} />
-       
-      </Switch> */}
       <NewsLetter />
       <Footer />
     </div>
