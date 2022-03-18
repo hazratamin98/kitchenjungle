@@ -3,13 +3,13 @@ import React, { useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import {
-  // Login,
+  Login,
   Home,
-  // Recipe,
-  // SignUp,
-  // submitrecipe,
-  // Favorite,
-  // Contact,
+  Recipe,
+  SignUp,
+  SubmitRecipe,
+  Favorites,
+  Contact,
 } from "src/pages";
 
 // import NewsLetter from "./Components/NewsLetter/NewsLetter"
@@ -25,12 +25,12 @@ function App() {
       <Navbar />
       <Switch>
         <Route path={"/"} exact component={Home} />
-        {/* <Route path={"/Login"} exact component={Login} />
-        <Route path={"/SignUp"} exact component={SignUp} />
         <Route path={"/Recipe"} exact component={Recipe} />
-        <Route path={"/submitrecipe"} exact component={submitrecipe} />
-        <Route path={"/Favorite"} component={Favorite} />
-        <Route path={"/Contact"} component={Contact} /> */}
+        <Route path={"/Login"} exact component={Login} />
+        <Route path={"/SignUp"} exact component={SignUp} />
+        <Route path={"/submitrecipe"} exact component={SubmitRecipe} />
+        <Route path={"/Favorite"} component={Favorites} />
+        <Route path={"/Contact"} component={Contact} />
       </Switch>
       <Footer />
     </Router>
