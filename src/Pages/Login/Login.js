@@ -19,7 +19,10 @@ const Login = () => {
           </h2>
           <p className="text-center">
             Don't have an account?{" "}
-            <Link className="underline cursor-pointer" to="/SignUp">
+            <Link
+              className="underline cursor-pointer  text-blue-700"
+              to="/SignUp"
+            >
               Sign Up
             </Link>
           </p>

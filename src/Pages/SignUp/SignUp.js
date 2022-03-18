@@ -41,7 +41,10 @@ const SignUp = () => {
             </h2>
             <p className="text-center">
               Already have an account?{" "}
-              <a className="underline cursor-pointer" href="SignIn">
+              <a
+                className="underline cursor-pointer text-blue-700"
+                href="SignIn"
+              >
                 Sign in
               </a>{" "}
             </p>
