@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Login = () => {
   return (
@@ -11,7 +11,7 @@ const Login = () => {
             alt="Workflow"
           />
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Welcome back
           </h2>
         </div>
         <form class="mt-8 space-y-6" action="#">
@@ -99,7 +99,7 @@ const Login = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
