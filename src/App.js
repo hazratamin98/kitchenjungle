@@ -10,7 +10,7 @@ import SubmitRecipe from "./Pages/Submit_Recipe/Submit_Recipe"
 import Favorite from "./Pages/Favorites/Favorite"
 import Contact from "./Pages/Contact/Contact"
 
-import NewsLetter from "./Components/NewsLetter/NewsLetter"
+// import NewsLetter from "./Components/NewsLetter/NewsLetter"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
