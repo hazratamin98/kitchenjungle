@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/context/*": ["context/*"],
+      "@/utils/*": ["utils/*"],
+      "@/assets/*": ["assets/*"],
+      "@/pages/*": ["pages/*"],
+      "@/views/*": ["views/*"],
+      "@/firebase/*": ["firebase/*"]
+    }
+  }
+}

@@ -1,16 +1,32 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+
+import { getAuth, createUserWithEmailAndPassword } from "src/firebase";
 
 const SignUp = () => {
-  const [firstname, setFirstname] = useState("")
-  const [lastname, setLastname] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [password, setPassword] = useState("")
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
 
   const handlesubmit = (e) => {
-    e.preventDefault()
-    console.log(firstname, lastname, password, phone, email)
-  }
+    e.preventDefault();
+    console.log(firstname, lastname, password, phone, email);
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        console.log({ user });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        console.log({ errorCode, errorMessage });
+      });
+  };
 
   return (
     <div className="  md:grid grid-cols-2">
@@ -61,7 +77,7 @@ const SignUp = () => {
               </label> */}
                 <input
                   onChange={(e) => {
-                    setFirstname(e.target.value)
+                    setFirstname(e.target.value);
                   }}
                   id="Frist_name"
                   name="name"
@@ -79,7 +95,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setLastname(e.target.value)
+                    setLastname(e.target.value);
                   }}
                   id="last_name"
                   name="name"
@@ -96,7 +112,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setEmail(e.target.value)
+                    setEmail(e.target.value);
                   }}
                   id="email"
                   name="email"
@@ -116,7 +132,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setPhone(e.target.value)
+                    setPhone(e.target.value);
                   }}
                   id="number"
                   name="number"
@@ -132,7 +148,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setPassword(e.target.value)
+                    setPassword(e.target.value);
                   }}
                   id="password"
                   name="password"
@@ -155,7 +171,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;
