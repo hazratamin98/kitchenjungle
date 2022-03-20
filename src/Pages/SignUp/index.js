@@ -1,32 +1,39 @@
-import React, { useState } from "react";
-
-import { getAuth, createUserWithEmailAndPassword } from "src/firebase";
+import React, { useState } from "react"
+// import { useUserAuth } from "src/context/userContextProvider";
+// import { useNavigate } from "react-router-dom"
+import { getAuth, createUserWithEmailAndPassword } from "src/firebase"
 
 const SignUp = () => {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [firstname, setFirstname] = useState("")
+  const [lastname, setLastname] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+
+  // const navigate = useNavigate()
 
   const handlesubmit = (e) => {
-    e.preventDefault();
-    console.log(firstname, lastname, password, phone, email);
+    e.preventDefault()
+    setError("")
+    console.log(firstname, lastname, password, phone, email)
 
-    const auth = getAuth();
+    const auth = getAuth()
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        const user = userCredential.user
 
-        console.log({ user });
+        console.log({ user })
+        // navigate("/Login")
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        const errorCode = error.code
+        const errorMessage = error.message
+        setError(error.message)
 
-        console.log({ errorCode, errorMessage });
-      });
-  };
+        console.log({ errorCode, errorMessage })
+      })
+  }
 
   return (
     <div className="  md:grid grid-cols-2">
@@ -51,6 +58,11 @@ const SignUp = () => {
       /> */}
       <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
+          {error && (
+            <alert className="bg-red-400 py-4 px-2 rounded text-black text-2xl">
+              {error}
+            </alert>
+          )}
           <div>
             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Create account
@@ -77,7 +89,7 @@ const SignUp = () => {
               </label> */}
                 <input
                   onChange={(e) => {
-                    setFirstname(e.target.value);
+                    setFirstname(e.target.value)
                   }}
                   id="Frist_name"
                   name="name"
@@ -95,7 +107,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setLastname(e.target.value);
+                    setLastname(e.target.value)
                   }}
                   id="last_name"
                   name="name"
@@ -112,7 +124,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setEmail(e.target.value)
                   }}
                   id="email"
                   name="email"
@@ -132,7 +144,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setPhone(e.target.value);
+                    setPhone(e.target.value)
                   }}
                   id="number"
                   name="number"
@@ -148,7 +160,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    setPassword(e.target.value)
                   }}
                   id="password"
                   name="password"
@@ -171,7 +183,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default SignUp

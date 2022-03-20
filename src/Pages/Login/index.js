@@ -1,31 +1,32 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
-import { getAuth, signInWithEmailAndPassword } from "src/firebase";
+import { getAuth, signInWithEmailAndPassword } from "src/firebase"
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  //  const [error, setError] = useState("");
 
   const onsubmit = (e) => {
-    e.preventDefault();
-    console.log(email, password);
+    e.preventDefault()
+    console.log(email, password)
 
-    const auth = getAuth();
+    const auth = getAuth()
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
+        const user = userCredential.user
 
-        console.log({ user });
+        console.log({ user })
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        const errorCode = error.code
+        const errorMessage = error.message
 
-        console.log({ errorCode, errorMessage });
-      });
-  };
+        console.log({ errorCode, errorMessage })
+      })
+  }
 
   return (
     <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -56,7 +57,7 @@ const Login = () => {
                 name="email"
                 type="email"
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  setEmail(e.target.value)
                 }}
                 required
                 class="  rounded shadow-md  w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -73,7 +74,7 @@ const Login = () => {
                   name="password"
                   type="password"
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    setPassword(e.target.value)
                   }}
                   required
                   class="  rounded shadow-md  w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -136,7 +137,7 @@ const Login = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
