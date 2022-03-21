@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 // import { useUserAuth } from "src/context/userContextProvider";
-// import { useNavigate } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { getAuth, createUserWithEmailAndPassword } from "src/firebase"
 
 const SignUp = () => {
@@ -11,7 +11,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
 
-  // const navigate = useNavigate()
+  const history = useHistory()
 
   const handlesubmit = (e) => {
     e.preventDefault()
@@ -24,7 +24,7 @@ const SignUp = () => {
         const user = userCredential.user
 
         console.log({ user })
-        // navigate("/Login")
+        history.push("/Login")
       })
       .catch((error) => {
         const errorCode = error.code
