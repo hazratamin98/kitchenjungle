@@ -15,29 +15,26 @@ import {
 // import NewsLetter from "./Components/NewsLetter/NewsLetter"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { UserContextProvider } from "./context/userContextProvider"
 
 function App() {
   useEffect(() => {
     document.title = "Kitchen Jungle"
   }, [])
   return (
-    <UserContextProvider>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path={"/"} exact component={Home} />
-          <Route path={"/Recipe"} exact component={Recipe} />
-          <Route path={"/Login"} exact component={Login} />
-          <Route path={"/SignUp"} exact component={SignUp} />
-          <Route path={"/submitrecipe"} exact component={SubmitRecipe} />
-          <Route path={"/Favorite"} component={Favorites} />
-          <Route path={"/Contact"} component={Contact} />
-        </Switch>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path={"/"} exact component={Home} />
+        <Route path={"/Recipe"} exact component={Recipe} />
+        <Route path={"/Login"} exact component={Login} />
+        <Route path={"/SignUp"} exact component={SignUp} />
+        <Route path={"/submitrecipe"} exact component={SubmitRecipe} />
+        <Route path={"/Favorite"} component={Favorites} />
+        <Route path={"/Contact"} component={Contact} />
+      </Switch>
 
-        <Footer />
-      </Router>
-    </UserContextProvider>
+      <Footer />
+    </Router>
   )
 }
 
