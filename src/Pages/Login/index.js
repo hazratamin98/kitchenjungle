@@ -21,6 +21,7 @@ const Login = () => {
         const user = userCredential.user
 
         console.log({ user })
+        
         History.push("/")
       })
       .catch((error) => {
