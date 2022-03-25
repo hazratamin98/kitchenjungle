@@ -1,39 +1,51 @@
-import React, { useState } from "react"
-// import { useUserAuth } from "src/context/userContextProvider";
-import { useHistory } from "react-router-dom"
-import { getAuth, createUserWithEmailAndPassword } from "src/firebase"
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
+
+import AuthContext from "src/context/AuthContext";
+import { db, setDoc, doc } from "src/firebase";
 
 const SignUp = () => {
-  const [firstname, setFirstname] = useState("")
-  const [lastname, setLastname] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
+  const { signIn } = useContext(AuthContext);
 
-  const history = useHistory()
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const history = useHistory();
 
   const handlesubmit = (e) => {
-    e.preventDefault()
-    setError("")
-    console.log(firstname, lastname, password, phone, email)
+    e.preventDefault();
+    setError("");
 
-    const auth = getAuth()
-    createUserWithEmailAndPassword(auth, email, password)
+    signIn(email, password)
       .then((userCredential) => {
-        const user = userCredential.user
+        const user = userCredential.user;
 
-        console.log({ user })
-        history.push("/Login")
+        const data = {
+          uid: user.uid,
+          name: firstname + " " + lastname,
+          email,
+          phone,
+        };
+
+        setDoc(doc(db, "users", user.uid), data)
+          .then(() => {
+            console.log("saved");
+            history.push("/Login");
+          })
+          .catch((err) => console.log(err));
       })
       .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message
-        setError(error.message)
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(error.message);
 
-        console.log({ errorCode, errorMessage })
-      })
-  }
+        console.log({ errorCode, errorMessage });
+      });
+  };
 
   return (
     <div className="  md:grid grid-cols-2">
@@ -89,7 +101,7 @@ const SignUp = () => {
               </label> */}
                 <input
                   onChange={(e) => {
-                    setFirstname(e.target.value)
+                    setFirstname(e.target.value);
                   }}
                   id="Frist_name"
                   name="name"
@@ -107,7 +119,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setLastname(e.target.value)
+                    setLastname(e.target.value);
                   }}
                   id="last_name"
                   name="name"
@@ -124,7 +136,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setEmail(e.target.value)
+                    setEmail(e.target.value);
                   }}
                   id="email"
                   name="email"
@@ -144,7 +156,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setPhone(e.target.value)
+                    setPhone(e.target.value);
                   }}
                   id="number"
                   name="number"
@@ -160,7 +172,7 @@ const SignUp = () => {
 
                 <input
                   onChange={(e) => {
-                    setPassword(e.target.value)
+                    setPassword(e.target.value);
                   }}
                   id="password"
                   name="password"
@@ -183,7 +195,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

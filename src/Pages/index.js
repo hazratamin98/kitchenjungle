@@ -5,3 +5,4 @@ export { default as Contact } from "./Contact";
 export { default as Login } from "./Login";
 export { default as SignUp } from "./SignUp";
 export { default as SubmitRecipe } from "./SubmitRecipe";
+export { default as Profile } from "./profile";

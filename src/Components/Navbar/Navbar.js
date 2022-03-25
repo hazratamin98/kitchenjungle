@@ -1,8 +1,11 @@
-import React from "react"
-import Image from "../images/download.png"
-import { Link } from "react-router-dom"
+import React, { useContext } from "react";
+import Image from "../images/download.png";
+import { Link } from "react-router-dom";
+
+import AuthContext from "src/context/AuthContext";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <nav className="bg-white shadow-2xl  px-2 sm:px-4 py-4 ">
@@ -83,10 +86,8 @@ const Navbar = () => {
                   CONTACT
                 </Link>
               </li>
-              <Link to="/Login">
-                {" "}
-                <a href="image" className="cursor-pointer hover:text-blue-400 ">
-                  {" "}
+              {user ? (
+                <Link to="/profile">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -101,14 +102,18 @@ const Navbar = () => {
                       d="M16 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                     ></path>
                   </svg>
-                </a>
-              </Link>
+                </Link>
+              ) : (
+                <Link to="/Login">
+                  <span>Login</span>
+                </Link>
+              )}
             </ul>
           </div>
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

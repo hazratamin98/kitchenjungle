@@ -1,7 +1,7 @@
-import "./App.css"
-import React, { useEffect } from "react"
-import Navbar from "./components/Navbar/Navbar"
-import Footer from "./components/Footer/Footer"
+import "./App.css";
+import React, { useEffect } from "react";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import {
   Login,
   Home,
@@ -10,16 +10,17 @@ import {
   SubmitRecipe,
   Favorites,
   Contact,
-} from "src/pages"
+  Profile,
+} from "src/pages";
 
 // import NewsLetter from "./Components/NewsLetter/NewsLetter"
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   useEffect(() => {
-    document.title = "Kitchen Jungle"
-  }, [])
+    document.title = "Kitchen Jungle";
+  }, []);
   return (
     <Router>
       <Navbar />
@@ -31,11 +32,12 @@ function App() {
         <Route path={"/submitrecipe"} exact component={SubmitRecipe} />
         <Route path={"/Favorite"} component={Favorites} />
         <Route path={"/Contact"} component={Contact} />
+        <Route path={"/profile"} component={Profile} />
       </Switch>
 
       <Footer />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,36 +1,37 @@
-import React, { useState } from "react"
-import { Link, useHistory } from "react-router-dom"
+import React, { useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 
-import { getAuth, signInWithEmailAndPassword } from "src/firebase"
+// context
+import AuthContext from "src/context/AuthContext";
 
 const Login = () => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const { login } = useContext(AuthContext);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   //  const [error, setError] = useState("");
 
-  const History = useHistory()
+  const History = useHistory();
 
   const onsubmit = (e) => {
-    e.preventDefault()
-    console.log(email, password)
+    e.preventDefault();
 
-    const auth = getAuth()
-    signInWithEmailAndPassword(auth, email, password)
+    login(email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user
+        const user = userCredential.user;
 
-        console.log({ user })
-        
-        History.push("/")
+        console.log({ user });
+
+        History.push("/");
       })
       .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-        console.log({ errorCode, errorMessage })
-      })
-  }
+        console.log({ errorCode, errorMessage });
+      });
+  };
 
   return (
     <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -61,7 +62,7 @@ const Login = () => {
                 name="email"
                 type="email"
                 onChange={(e) => {
-                  setEmail(e.target.value)
+                  setEmail(e.target.value);
                 }}
                 required
                 class="  rounded shadow-md  w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -78,7 +79,7 @@ const Login = () => {
                   name="password"
                   type="password"
                   onChange={(e) => {
-                    setPassword(e.target.value)
+                    setPassword(e.target.value);
                   }}
                   required
                   class="  rounded shadow-md  w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -141,7 +142,7 @@ const Login = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
