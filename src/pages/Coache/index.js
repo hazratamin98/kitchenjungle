@@ -4,7 +4,7 @@ const Coache = () => {
   return (
     <div>
       <div>
-        <h1 className="text-4xl font-bold text-center my-4">Our Coaches</h1>
+        <h1 className="text-4xl font-bold text-center my-5">Our Coaches</h1>
         <p className="text-lg font-normal  text-center my-4">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis,
           alias. Iure, doloribus?
