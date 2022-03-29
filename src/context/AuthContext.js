@@ -7,6 +7,7 @@ import {
   doc,
   db,
   getDoc,
+  updateProfile,
 } from "src/firebase";
 
 const AuthContext = createContext();
@@ -34,6 +35,19 @@ export const AuthProvider = ({ children }) => {
       }
     });
   }, []);
+
+  updateProfile(auth.user, {
+    displayName: "Jane Q. User",
+    photoURL: "https://example.com/jane-q-user/profile.jpg",
+  })
+    .then(() => {
+      // Profile updated!
+      // ...
+    })
+    .catch((error) => {
+      // An error occurred
+      // ...
+    });
 
   const signIn = (_email, _password) => {
     return createUserWithEmailAndPassword(auth, _email, _password);
