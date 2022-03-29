@@ -1,14 +1,16 @@
 import React from "react";
 
 import { HomeView } from "src/views";
-import Hero from "../../components/images/hero.jpg";
+import Hero from "../Hero";
 import Coache from "../Coache";
+import Weekly from "../Weekly";
 
 const Home = () => {
   return (
     <div>
-      <img src={Hero} alt="Herp" className="w-full h-full" />
+      <Hero />
       <Coache />
+      <Weekly />
       <HomeView />
     </div>
   );
